@@ -1,8 +1,8 @@
 package Exercise;
-
+// 缺省参数列表，自动生成一个数组形参，将数据一一拷贝到形参中。
 public class SortTest {
     public static void main(String[] args){
-        int[][] a = {{1,3,2},{3,2,1}};
+        int[][] a = {{1,3,2},{3,2,4}};
         m1(a[0],a[1][0],a[1][1],a[1][2]);
         for (int i=0;i<a.length;i++) {
             for (int j = 0; j < a[i].length; j++)
