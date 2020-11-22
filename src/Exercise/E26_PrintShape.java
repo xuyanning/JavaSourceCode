@@ -1,6 +1,6 @@
 package Exercise;
 
-public class PrintShape {
+public class E26_PrintShape {
     public static void main(String[] args){
         String s = "天行健";
         int n = s.length()-1;
