@@ -1,27 +1,27 @@
 package Exercise;
 
-class ZeroException extends Exception{ }
+
 public class E22_Exception {
-	static String str = "a13";
-	static int index=0;
+	static class ZeroException extends Exception{ }
 	public static void main(String args[]) {
-		try{ 
-			while(true) {f();  index++;}
-		} catch(Exception e) {
-			System.out.println("Handle UnknownException");}
-	}
-	public static void f() {
-		try{			
-			System.out.println("start index:" + index);
-			System.out.println("number = " + g());	
-		}catch (ZeroException e){
-			System.out.println("Handle ZeroExecution");
+		String str = "2021a";
+		for (int i = 2; i <= str.length(); i++) {
+			try {
+				System.out.println("index:" + i);
+				System.out.println("number = " + f(str.charAt(i)));
+			} catch (ZeroException e) {
+				System.out.println("ZeroExecution");
+			} catch (Exception e) {
+				System.out.println("UnknownException");
+			} finally {
+				System.out.println("finally\n");
+			}
 		}
-		finally{System.out.println("end index:"+index + "\n");	}
 	}
-	public static String g() throws ZeroException{
+
+	public static String f(char ch) throws ZeroException{
 		try{ 
-			int number = Integer.parseInt("a03".charAt(index)+"");
+			int number = Integer.parseInt(ch+"");
 			if (number==0) 
 				throw new ZeroException();
 			return number+"";
@@ -67,3 +67,28 @@ class Exception2 {
 	}
 }
 
+class Exception3 {
+	public static int f(String s) throws Exception{
+		try {
+			return Integer.parseInt(s.substring(1,4));
+		}
+		catch (NumberFormatException e) {
+			System.out.println("Improper score value");
+			return -1;
+		}
+		finally {
+			System.out.println("Finally in f()");
+		}
+	}
+	public static void main(String[] args) {
+		String[] sArray= {"a0123","a45","ab789"};
+		for(int i=0;i<=3;i++) {
+			try {
+				System.out.println(f(sArray[i])+"\n");
+			}
+			catch (Exception e) {
+				System.out.println("Caught OtherException\n");
+			}
+		}
+	}
+}
