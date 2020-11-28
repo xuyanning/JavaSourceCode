@@ -6,7 +6,7 @@ public class SumFor {
 		double sum = 0;
 		double x =1;
 		double y = 1;
-		
+
 		for (int i =1 ; i<=100; i+=2)
 		{
 			
