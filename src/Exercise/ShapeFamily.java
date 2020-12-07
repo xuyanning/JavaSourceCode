@@ -1,24 +1,11 @@
 package Exercise;
+// 作者，徐木鱼，供实验参考
+// shape, circle, square继承关系树。
+// JKD Arrays提供了缺省的Sort方法，支持Comparable接口以及Comparator接口两种使用方法，后者可以实现多规则比较
+// 如果不使用JDK，自己也可以实现Sort，展示代码为shapeSort1，与shapeSort2，后者展示了基于Comparator接口的多规则排序
 
 import java.util.Arrays;
 import java.util.Comparator;
-
-class Comparator1 implements Comparator<Shape> {
-    public int compare(Shape o1, Shape o2) {
-        double  result = o1.getArea() - o2.getArea();
-        if (result<0) return -1  ;
-        else if (result>0) return 1;
-        return  0;
-    }
-}
-class Comparator2 implements Comparator {
-    public int compare(Object o1, Object o2) {
-        double  result = ((Shape)o1).getArea() - ((Shape)o2).getArea();
-        if (result<0) return 1  ;
-        else if (result>0) return -1;
-        return  0;
-    }
-}
 
 public class ShapeFamily {
     public static void main(String[] args) {
@@ -144,5 +131,21 @@ class Square extends Shape{
     }
     public String toString(){
         return "Square (" + getX() + " , " + getY() + " , " + lengthofSide + ")";
+    }
+}
+class Comparator1 implements Comparator<Shape> {
+    public int compare(Shape o1, Shape o2) {
+        double  result = o1.getArea() - o2.getArea();
+        if (result<0) return -1  ;
+        else if (result>0) return 1;
+        return  0;
+    }
+}
+class Comparator2 implements Comparator {
+    public int compare(Object o1, Object o2) {
+        double  result = ((Shape)o1).getArea() - ((Shape)o2).getArea();
+        if (result<0) return 1  ;
+        else if (result>0) return -1;
+        return  0;
     }
 }
