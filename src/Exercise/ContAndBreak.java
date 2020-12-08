@@ -2,13 +2,13 @@ package Exercise;
 
 public class ContAndBreak {
 
-	public static void main(String[] args) {
+	static public  void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		m2();
 
 	}
 	//基本概念
-	public static void m1(){
+	 public static final void m1(){
 		System.out.println("Break Test");
 		for (int i = 1; i<= 5; i++){
 			System.out.print(i + "\t");
@@ -65,11 +65,13 @@ public class ContAndBreak {
 			if (num %2 == 0) continue;
 			System.out.print(num);
 		}
-
-		for (int num = 5;;num+=6){
+		System.out.println();
+		int num = 5;
+		for (;;num+=6){
 			if (num % 7 ==0) break;
 			System.out.print(num + " ");
 		}
+		System.out.print(num + " ");
 	}
 
 		//       String str = "abc";

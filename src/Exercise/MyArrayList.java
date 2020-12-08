@@ -1,5 +1,5 @@
 package Exercise;
-
+// 来自互联网，转载，供学习使用，侵权删除。
 import java.util.Iterator;
 
 public class MyArrayList<E> implements Iterable<E> {
