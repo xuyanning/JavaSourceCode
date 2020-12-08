@@ -2,6 +2,7 @@ package Exercise;
 
 public class E21_forSwitch {
 	public static void main(String[] args) {
+		E21_FlowCtrl.m8();
 		E21_FlowCtrl.m1();
 
 	}
@@ -52,12 +53,17 @@ class E21_FlowCtrl{
 	}
 
 	public static void m8(){
-		String str = "Java";
-		for (int i=0;i<str.length();i++)
-			for (int j=0; j<str.length();j++){
-				
-			}
-
+		int[] a = {2410, 500};
+		for (int n:a)	{
+			int m = 0;
+			do {
+				int l = n % 100;
+				m = m * 100 + l;
+				n = n / 100;
+			} while (n>0);
+			System.out.print(m + "\t");
+		}
+		System.out.println(a[0]+a[1]);
 
 	}
 
