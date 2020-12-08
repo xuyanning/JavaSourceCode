@@ -49,6 +49,15 @@ class E21_FlowCtrl{
 	public static void m7(){
 		int[] a={0};
 		m3(a);System.out.println(a[0]);
+	}
+
+	public static void m8(){
+		String str = "Java";
+		for (int i=0;i<str.length();i++)
+			for (int j=0; j<str.length();j++){
+				
+			}
+
 
 	}
 
