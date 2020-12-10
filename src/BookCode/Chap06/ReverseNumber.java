@@ -1,4 +1,5 @@
-package BookCode.Chap06;//********************************************************************
+package BookCode.Chap06;
+//********************************************************************
 //  ReverseNumber.java       Author: Lewis/Loftus
 //
 //  Demonstrates the use of a do loop.
