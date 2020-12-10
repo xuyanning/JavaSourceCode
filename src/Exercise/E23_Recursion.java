@@ -75,32 +75,32 @@ class Permutation {
     }
 
     public static void main(String[] args) {
-        int list[] = {3, 2, 1};
-        System.out.println(arrange(list, 10));
-       // int pList[] = {1,8,9,6,2};
-       // permulation(pList, 1, 4);
+     //   int list[] = {3, 2, 1};
+      //  System.out.println(arrange(list, 10));
+        int pList[] = {1,0,2,4};
+        permutation(pList,0,2);
+        System.out.println("****");
+        permutation(pList, 1, 4);
     }
 
-    public static void permulation(int[] list, int start, int end) {
-        int i;
+    public static void permutation(int[] list, int start, int end) {
         if (start == end) {
-            for (i = 0; i < list.length; i++)
-                System.out.print(list[i] + " ");
+            for (int i :list)
+                System.out.print(i );
             System.out.println();
         } else {
-            for (i = start; i < end; i++) {
+            for (int i = start; i < end; i++) {
                 swap(list, start, i);
-                permulation(list, start + 1, end);
+                permutation(list, start + 1, end);
                 swap(list, start, i);
             }
         }
     }
-
-    public static void swap(int[] list, int start, int i) {
+    public static void swap(int[] list, int i, int j) {
         int temp;
-        temp = list[start];
-        list[start] = list[i];
-        list[i] = temp;
+        temp = list[i];
+        list[i] = list[j];
+        list[j] = temp;
     }
 
 }
