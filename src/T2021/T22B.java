@@ -30,7 +30,7 @@ class ExceptionT{
             for (int i = 0; i < s.length(); i++) {
                 ch = s.charAt(i);
                 int d = Integer.parseInt(ch + "");
-                if (d == 0) continue;                ;
+                if (d == 0) continue;
                 number = number * 10 + d;
             }
         }catch (NumberFormatException e){
