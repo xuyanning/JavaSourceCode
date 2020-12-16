@@ -11,7 +11,15 @@ class Node {
 
 public class E33_LinkList {
 	Node head = null;
-	
+	public String toString(){
+		String str="";
+		Node p = head;
+		while (p !=null) {
+			str += "\t" + p.data;
+			p = p.next;
+		}
+		return str;
+	}
     public void addNode(int d) {
         Node newNode = new Node(d,null);
         if (head == null) {
@@ -29,6 +37,20 @@ public class E33_LinkList {
     	head = new Node(d,head);
     }
 
+    public boolean insertNode(int n, int data){
+		Node p = head;
+		if (n==0) {head= new Node(data,head);return true;}
+		if (p== null) return false;// 两种特殊情况
+		if (n==1) {p.next = new Node(data,p.next); return true;}
+		if (p.next== null) return false;
+		for (int i=0;i<n - 2;i++){  // p由头节点走n -2步
+			p = p.next;
+			if (p.next== null) return false; //p是最后一个节点了，但还没走到位置
+		}
+		p.next.next =  new Node(data,p.next.next);
+		return true;
+	}
+
 	public void reverseList(){
 		Node p= head;
 		Node pp;
@@ -40,8 +62,21 @@ public class E33_LinkList {
 			p = pp;
 		}
 	}
-	
-    public void removeBiggerThan(int d){ 
+	//第n个位置开始逆转，假设 1<n<length
+	public void reverseList(int n){
+		Node pn1= head;
+		for (int i=1;i<n-1;i++) pn1=pn1.next;
+		Node p=null,pn2=null;
+		while (pn1.next!=null)	{
+			p=pn1.next;
+			pn1.next = pn1.next.next; //删除
+			p.next = pn2;
+			pn2 = p; //头部插入
+		}
+		pn1.next = pn2;
+	}
+
+	public void removeBiggerThan(int d){
     	while (head != null && head.data > d )
     		head = head.next;    	
     	if (head == null) 
@@ -127,7 +162,5 @@ public class E33_LinkList {
 		}
 		tail.next=(head1==null)?head2:head1;
 	}
-
-
 
 }

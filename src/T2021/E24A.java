@@ -33,7 +33,7 @@ class ChildClass extends BaseClass{
         System.out.println("子类方法g()被调用" + childS);
     }
     private void h(){
-        System.out.println("基类方法h()被调用");
+        System.out.println("子类方法h()被调用");
     }
 }
 public class E24A {
